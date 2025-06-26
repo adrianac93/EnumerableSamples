@@ -82,3 +82,35 @@ foreach (var product in products)
 }
 
 #endregion
+
+#region LinkedList
+Console.WriteLine("*** LinkedList<T> ***");
+var numbers = new LinkedList<int>();
+numbers.AddFirst(5);
+numbers.AddLast(10);
+numbers.AddLast(20);
+numbers.AddLast(30);
+numbers.AddLast(40);
+numbers.AddLast(50);
+numbers.AddLast(60);
+numbers.AddLast(65);
+
+var node30 = numbers.Find(30);
+numbers.AddAfter(node30!, 35);
+
+var node50 = numbers.Find(50);
+numbers.Remove(node50!);
+
+var pointer = numbers.First;
+while (pointer != null) 
+{
+    Console.WriteLine(pointer.Value);
+    pointer = pointer.Next;
+}
+
+//foreach (var number in numbers) 
+//{
+//   Console.WriteLine(number);
+//}
+
+#endregion
